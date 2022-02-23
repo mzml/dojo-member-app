@@ -1,3 +1,0 @@
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=long-password
-POSTGRES_DB=dojo_member_app_development

@@ -1,12 +1,7 @@
-FROM ruby:3
+FROM ruby
 
-RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
-    nodejs
+# Install OS dependencies
+RUN apt-get update -y
+RUN apt-get install -y --no-install-recommends nodejs
 
-COPY Gemfile* /usr/src/app/
 WORKDIR /usr/src/app
-RUN bundle install
-
-COPY . /usr/src/app
-
-CMD ["bin/rails", "s", "-b", "0.0.0.0"]
